@@ -54,7 +54,7 @@ export const AppLayout = ({
               {post.topic}
             </Link>
           ))}
-          {!noMorePosts && (
+          {!noMorePosts || posts.length === 0 && (
             <div
               onClick={() => {
                 getPosts({ lastPostDate: posts[posts.length - 1].created });
